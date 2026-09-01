@@ -1,0 +1,47 @@
+# Treino e testes em SQL
+
+Código:
+
+CREATE TABLE agencia{
+	id_agencia INT NOT NULL,
+	descricao TEXT NOT NULL,
+	gerente	VARCHAR(50),
+	status BOOLEAN NOT NULL,
+	contato TEXT,
+	endereco VARCHAR(100)
+};
+
+CREATE TABLE conta{
+	id_conta INT NOT NUL,
+	id_agencia INT,
+	id_tipo_conta VARCAHR(50),
+	numero_conta INT,
+	decricao TEXT,
+	limite INT,
+	dias_carencia INT,
+	taxa_juros REAL,
+	mensalidade REAL
+};
+
+ALTER TABLE conta RENAME COLUMN decricao TO descricao;
+
+CREATE TABLE tipo_conta{
+	id_tipo_conta INT,
+	decricao TEXT
+};
+
+CREATE TABLE movimento_conta{
+	id_movimento_conta INT,
+	id_conta INT,
+	data_hora_movimento DATE,
+	historico TEXT,
+	tipo_movimento VARCAHR(50),
+	valor REAL
+};
+
+INSERT INTO conta (id_agencia, id_tipo_conta, numero_conta , descricao, limite, dias_carencia, taxa_juros, mensalidade) VALUES (1, 1, 1000, 'Conta Principal', 200, 5, 0.01, 10.00);
+INSERT INTO conta (id_agencia, id_tipo_conta, numero_conta , descricao, limite, dias_carencia, taxa_juros, mensalidade) VALUES (2, 2, 2000, 'Conta Secundária', 300, 6, 0.02, 15.00);
+INSERT INTO conta (id_agencia, id_tipo_conta, numero_conta , descricao, limite, dias_carencia, taxa_juros, mensalidade) VALUES (3, 3, 3000, 'Conta Terciária', 400, 7, 0.03, 20.00);
+INSERT INTO conta (id_agencia, id_tipo_conta, numero_conta , descricao, limite, dias_carencia, taxa_juros, mensalidade) VALUES (3, 2, 7000, 'Conta Bancária', 600, 8, 0.05, 20.00);
+INSERT INTO conta (id_agencia, id_tipo_conta, numero_conta , descricao, limite, dias_carencia, taxa_juros, mensalidade) VALUES (3, 3, 6000, 'Conta Especial', 500, 9, 0.06, 20.00);
+
